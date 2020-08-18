@@ -12,6 +12,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_plugin_eddd2b34 from 'nuxt_plugin_plugin_eddd2b34' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_compositionapi_a8f56b68 from 'nuxt_plugin_compositionapi_a8f56b68' // Source: ../client/plugins/composition-api.ts (mode: 'all')
 import nuxt_plugin_apiclient_399ce7d9 from 'nuxt_plugin_apiclient_399ce7d9' // Source: ../client/plugins/api-client.ts (mode: 'all')
 import nuxt_plugin_logger_057b84e7 from 'nuxt_plugin_logger_057b84e7' // Source: ../client/plugins/logger.ts (mode: 'all')
@@ -61,7 +62,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"meta":[],"link":[],"style":[],"script":[]},
+    head: {"meta":[],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -189,6 +190,10 @@ async function createApp(ssrContext, config = {}) {
     }
   }
   // Plugin execution
+
+  if (typeof nuxt_plugin_plugin_eddd2b34 === 'function') {
+    await nuxt_plugin_plugin_eddd2b34(app.context, inject)
+  }
 
   if (typeof nuxt_plugin_compositionapi_a8f56b68 === 'function') {
     await nuxt_plugin_compositionapi_a8f56b68(app.context, inject)

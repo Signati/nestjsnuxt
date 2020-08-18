@@ -2,6 +2,7 @@
   "watch": [
     "server"
   ],
+
   "ext": "ts",
-  "exec": "ts-node -r tsconfig-paths/register server/main.ts"
+  "exec": "cross-env NODE_ENV=development ts-node -r tsconfig-paths/register server/main.ts "
 }

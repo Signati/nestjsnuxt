@@ -15,9 +15,16 @@ export class AppController {
 
   @Get()
   getHello(@Req() req: Request, @Res() res: Response) {
+    return this.nuxt.render('/', { amir: 'amir' }, req, res);
+  }
 
-    // @ts-ignore
-    req.data = { amir: 'hol' };
-    return this.nuxt.render('/', req, res);
+  @Get('/about')
+  about(@Req() req: Request, @Res() res: Response) {
+    return this.nuxt.render('/about', req, res);
+  }
+
+  @Get('/play/clock')
+  api(@Req() req: Request, @Res() res: Response) {
+    return this.nuxt.render('/play/clock', req, res);
   }
 }

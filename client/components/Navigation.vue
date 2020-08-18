@@ -12,7 +12,7 @@ export default {
     const navItems = [
       { name: 'TOP', path: '/' },
       { name: 'ABOUT', path: '/about' },
-      { name: 'PLAYGROUND', path: '/playground' },
+      { name: 'PLAYGROUND', path: '/play/clock' },
       { name: 'ASYNC', path: '/async' },
       { name: 'TIMER', path: '/timer' },
       { name: 'CLOCK', path: '/clock' },

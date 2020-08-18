@@ -1,5 +1,19 @@
 [
   {
+    "name": "about",
+    "path": "/about",
+    "component": "/home/misael/Documentos/misproyectos/nestjs/genda-serve/client/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_5ded2f50"
+  },
+  {
+    "name": "play-clock",
+    "path": "/play/clock",
+    "component": "/home/misael/Documentos/misproyectos/nestjs/genda-serve/client/pages/play/clock.vue",
+    "chunkName": "pages/play/clock",
+    "_name": "_351d0e9b"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/misael/Documentos/misproyectos/nestjs/genda-serve/client/pages/index.vue",

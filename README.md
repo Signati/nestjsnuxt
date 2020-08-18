@@ -72,3 +72,16 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+
+{
+    "dev:client": "nuxt",
+    "dev:server": "nodemon",
+    "build": "run-s clean:dist compile:server compile:client copy:.nuxt copy:client copy:config",
+    "clean:dist": "rimraf dist",
+    "compile:server": "tsc -p tsconfig.build.json",
+    "compile:client": "cross-env mode=production nuxt build",
+    "copy:client": "copyfiles -a \"client/**/*\" dist",
+    "copy:.nuxt": "copyfiles -a \".nuxt/**/*\" dist",
+    "copy:config": "copyfiles nuxt.config.js package.json package-lock.json dist"
+    }

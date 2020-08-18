@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "jsx": "preserve",
     "lib": [
       "dom",
@@ -19,23 +19,16 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "composite": false,
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./dist/server",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
-    },
     "types": [
       "@types/node",
-      "@nuxt/types"
+      "@nuxt/types",
+      "@nuxt/vue-app",
+      "@nuxtjs/vuetify"
     ]
   },
   "exclude": [

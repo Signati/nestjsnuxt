@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { Nuxt } from '@nuxt/core';
+import { Builder, Nuxt } from 'nuxt';
+
 import { BundleBuilder } from '@nuxt/webpack';
-import { Builder } from '@nuxt/builder';
 import { Server } from '@nuxt/server';
 import { NuxtAppOptions, Context, ServerMiddleware } from '@nuxt/types';
 import { NuxtService } from './nuxt.service';
@@ -20,18 +20,23 @@ type NextServerConstructor = Omit<NuxtAppOptions, 'staticMarkup'> & {
   ],
 })
 export class NuxtModule {
+
   constructor(
     private readonly nuxt: NuxtService,
   ) {
   }
 
   public async prepare(options?: NextServerConstructor) {
-    const app = await new Nuxt(config);
-    config.dev = !(process.env.NODE_ENV === 'production');
-    if (config.dev) {
+    let app: any;
+    if (process.env.mode === 'production') {
+      config.dev = false;
+      app = new Nuxt(config);
+    } else if (process.env.IS_NUXT_ENABLED) {
+      app = new Nuxt(config);
       new Builder(app).build();
     }
     // console.log(app);
+    // return app.server().then(() => this.nuxt.setApp(app));
     return this.nuxt.setApp(app);
   }
 }

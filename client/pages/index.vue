@@ -1,21 +1,18 @@
 <template>
 	<div>
-		<h1>amir</h1>
+		<h1>amirmisael  </h1>
 		<p>Ref: {{ aboutIt }}</p>
 		<p>Reactive: {{ aboutItReactive.text }}</p>
 		<button type="button" style="background-color: royalblue" @click="onClickBtn">{{ btnLabel }}</button>
-		
 		<Hoc v-slot="{ some, them }">
 			<div>{{ some }}</div>
 			<div>{{ them }}</div>
 		</Hoc>
-		
 		<component :is="currentComponent" v-slot="{ some }">
 			<div>{{ some }}</div>
 		</component>
 	</div>
 </template>
-
 <script lang="ts">
 import { onMounted, ref, reactive } from '@vue/composition-api';
 import Hoc from '../components/Hoc.vue';
@@ -24,13 +21,10 @@ export default {
   components: {
     Hoc,
   },
-  async fetch({ req, res, query, params, data }) {
-    console.log(req.data, params, data);
 
-  },
-  setup() {
+  setup(data) {
+
     const currentComponent = ref(Hoc);
-
     onMounted(() => {
       console.log('mounted');
     });
