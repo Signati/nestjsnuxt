@@ -1,0 +1,57 @@
+import { RoutePath } from '../types/RoutePath.type';
+
+export const routeApp: RoutePath[] = [
+  {
+    'id': 21,
+    'isActive': 1,
+    'name': 'Home',
+    'fatherID': null,
+    'level': 1,
+    'url': '/',
+    'icon': 'mdi-home',
+    'createdAt': '2019-09-14T18:23:16.000Z',
+    'updatedAt': '2019-09-17T18:32:46.000Z',
+    'actions': [],
+    'children': [],
+  },
+  {
+    'id': 22,
+    'isActive': 1,
+    'name': 'Spa',
+    'fatherID': null,
+    'level': 2,
+    'url': '/tienda',
+    'icon': 'mdi-store',
+    'createdAt': '2019-09-14T18:24:51.000Z',
+    'updatedAt': '2019-09-17T18:24:55.000Z',
+    'actions': [],
+    'children': [
+      {
+        'id': 23,
+        'isActive': 1,
+        'name': 'Productos',
+        'fatherID': 22,
+        'level': 2,
+        'url': '/about',
+        'icon': 'mdi-food',
+        'createdAt': '2019-09-14T18:25:35.000Z',
+        'updatedAt': '2019-09-14T18:25:35.000Z',
+        'actions': [],
+        'children': [],
+      }, {
+        'id': 24,
+        'isActive': 1,
+        'name': 'Cavinas',
+        'fatherID': 22,
+        'level': 3,
+        'url': '/play/clock',
+        'icon': 'mdi-access-point',
+        'createdAt': '2019-09-17T14:09:09.000Z',
+        'updatedAt': '2019-09-17T14:09:10.000Z',
+        'actions': [],
+        'children': [],
+      },
+    ],
+  },
+
+];

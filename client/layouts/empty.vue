@@ -1,7 +1,6 @@
 <template>
 	<v-app>
 		<v-main>
-			<Menu></Menu>
 			<v-container>
 				<nuxt/>
 			</v-container>

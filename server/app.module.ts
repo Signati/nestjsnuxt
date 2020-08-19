@@ -4,11 +4,13 @@ import { AppService } from './app.service';
 import { LogicsModule } from './logics/logics.module';
 import { NuxtModule } from '../server/logics/nuxt/nuxt.module';
 import { NuxtMiddleware } from '../server/logics/nuxt/nuxt.middleware';
+import { SystemModule } from './system/system.module';
 
 @Module({
   imports: [
     NuxtModule,
     LogicsModule,
+    SystemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
