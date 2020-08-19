@@ -28,7 +28,14 @@ export class NuxtService {
     } else {
       //console.log(arg2);
       arg3.data = arg2;
+      arg3.query = arg2;
+      console.log(this.app.renderer);
       await this.app.render(arg3, arg4, page);
+      // console.log(this.app);
+      // @ts-ignoreai
+      // page.query = arg2;
+      //return await this.app.renderRoute(page, { req: arg3, res: arg4, query: arg2 });
+
     }
   }
 

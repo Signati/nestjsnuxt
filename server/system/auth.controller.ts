@@ -10,6 +10,6 @@ export class AuthController {
 
   @Get('/login')
   about(@Req() req: Request, @Res() res: Response) {
-    return this.nuxt.render('/auth/login', req, res);
+    return this.nuxt.render('/auth/login',{amir:'hola'}, req, res);
   }
 }
