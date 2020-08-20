@@ -2,6 +2,7 @@
 	<div>
 		<h1 ref="titleRef">TypeScript Playground</h1>
 		<v-btn color="primary" dark @click="onClickChangeStatusBtn">Change Status</v-btn>
+		{{status}}
 		<StatusChecker :status="status"/>
 	</div>
 </template>
@@ -10,6 +11,7 @@
 import { ref, toRefs, reactive, onMounted } from '@vue/composition-api';
 import useChangeStatus from '../../hooks/useChangeStatus';
 import StatusChecker from '../../components/StatusChecker.vue';
+import { accessor } from '../../store';
 
 export default {
   components: {
@@ -34,6 +36,7 @@ export default {
     const { status, toggleStatus } = useChangeStatus();
 
     const onClickChangeStatusBtn = () => {
+      accessor.setEmail('amir');
       toggleStatus();
     };
 

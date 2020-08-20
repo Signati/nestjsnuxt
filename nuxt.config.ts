@@ -52,6 +52,7 @@ const config: Configuration = {
   */
   buildModules: [
     '@nuxt/typescript-build',
+    'nuxt-typed-vuex',
     '@nuxtjs/vuetify',
   ],
 
@@ -68,6 +69,9 @@ const config: Configuration = {
     */
     extend(config, ctx) {
     },
+    transpile: [
+      /typed-vuex/,
+    ],
   },
 };
 

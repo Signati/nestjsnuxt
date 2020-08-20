@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import Navigation from '../components/Navigation.vue';
-import Menu from '../components/core/Menu/Menu.vue';
+import Navigation from '../components/core/navigation/navigation.vue';
+import Menu from '../components/core/drawer/drawer.vue';
 
 export default {
   components: {

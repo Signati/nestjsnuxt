@@ -19,7 +19,7 @@ import { RedirectIfAuthenticatedMiddleware, RedirectIfNotAuthenticatedMiddleware
 export class AppModule {
 
   public configure(consumer: MiddlewareConsumer) {
-    this.handleRoutes(consumer);
+    // this.handleRoutes(consumer);
     this.handleAssets(consumer);
   }
 

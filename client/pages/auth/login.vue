@@ -95,10 +95,13 @@ const Login = defineComponent({
   layout: 'empty',
   components: {},
   props: {},
+  head: {
+    title: 'Login',
+  },
   asyncData(ctx: Context): Promise<object | void> | object | void {
-    console.log(ctx.query);
-    console.log(ctx.req.query);
-    console.log(ctx.req.data);
+    //console.log(ctx.req.csrfToken());
+    //console.log(ctx.req.data);
+    console.log(ctx.store.state);
 
   },
   setup(props, { root }) {

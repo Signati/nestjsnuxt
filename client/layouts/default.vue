@@ -1,7 +1,7 @@
 <template>
 	<v-app>
 		<v-main>
-			<Menu></Menu>
+			<Navigation/>
 			<v-container>
 				<nuxt/>
 			</v-container>
@@ -10,13 +10,23 @@
 </template>
 
 <script lang="ts">
-import Navigation from '../components/Navigation.vue';
-import Menu from '../components/core/Menu/Menu.vue';
+import Navigation from '../components/core/navigation/navigation.vue';
+import { Context } from '@nuxt/types';
+import { accessor } from '../store';
+import { onMounted } from '@vue/composition-api';
 
 export default {
   components: {
-    Menu,
     Navigation,
+  },
+  asyncData(ctx: Context): Promise<object | void> | object | void {
+    return ctx;
+  },
+  setup() {
+    onMounted(() => {
+
+      accessor.setEmail('pedro');
+    });
   },
 };
 </script>
