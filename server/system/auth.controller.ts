@@ -1,7 +1,7 @@
 import { Controller, Get, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { AppService } from '../app.service';
-import { NuxtService } from '../logics/nuxt/nuxt.service';
+import { NuxtService } from '../config/nuxt/nuxt.service';
 
 @Controller('auth')
 export class AuthController {

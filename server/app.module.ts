@@ -1,15 +1,16 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { LogicsModule } from './logics/logics.module';
-import { NuxtModule } from '../server/logics/nuxt/nuxt.module';
-import { NuxtMiddleware } from '../server/logics/nuxt/nuxt.middleware';
+import { ConfigModule } from './config/config.module';
+import { NuxtModule } from './config/nuxt/nuxt.module';
+import { NuxtMiddleware } from './config/nuxt/nuxt.middleware';
 import { SystemModule } from './system/system.module';
+import { RedirectIfAuthenticatedMiddleware, RedirectIfNotAuthenticatedMiddleware } from './config/auth/middlewares';
 
 @Module({
   imports: [
     NuxtModule,
-    LogicsModule,
+    ConfigModule,
     SystemModule,
   ],
   controllers: [AppController],
@@ -18,12 +19,28 @@ import { SystemModule } from './system/system.module';
 export class AppModule {
 
   public configure(consumer: MiddlewareConsumer) {
-    //this.handleRoutes(consumer);
+    this.handleRoutes(consumer);
     this.handleAssets(consumer);
   }
 
   private handleRoutes(consumer: MiddlewareConsumer): void {
+    consumer
+      .apply(RedirectIfAuthenticatedMiddleware)
+      .forRoutes({
+        path: 'auth/register',
+        method: RequestMethod.GET,
+      });
 
+    consumer
+      .apply(RedirectIfAuthenticatedMiddleware)
+      .forRoutes({
+        path: 'auth/login',
+        method: RequestMethod.GET,
+      });
+
+    consumer
+      .apply(RedirectIfNotAuthenticatedMiddleware)
+      .forRoutes(AppController);
   }
 
   private handleAssets(consumer: MiddlewareConsumer): void {

@@ -1,6 +1,11 @@
 # compiled output
 /dist
 /node_modules
+package-lock.json
+yarn.lock
+.env
+.nuxt
+.DS_Store
 
 # Logs
 logs

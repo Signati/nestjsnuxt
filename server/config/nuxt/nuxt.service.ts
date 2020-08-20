@@ -29,7 +29,7 @@ export class NuxtService {
       //console.log(arg2);
       arg3.data = arg2;
       arg3.query = arg2;
-      console.log(this.app.renderer);
+      //console.log(this.app.renderer);
       await this.app.render(arg3, arg4, page);
       // console.log(this.app);
       // @ts-ignoreai

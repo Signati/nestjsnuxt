@@ -4,7 +4,7 @@ import {
   Response,
 } from 'express';
 import { AppService } from './app.service';
-import { NuxtService } from './logics/nuxt/nuxt.service';
+import { NuxtService } from './config/nuxt/nuxt.service';
 
 @Controller()
 export class AppController {
