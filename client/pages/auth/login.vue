@@ -106,7 +106,8 @@ const Login = defineComponent({
   },
   setup(props, { root }) {
     const style = {
-      backgroundImage: 'url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000)',
+      //backgroundImage: 'url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000)',
+      background: '#602167',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',

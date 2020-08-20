@@ -1,9 +1,11 @@
 import { Configuration } from '@nuxt/types/config';
-import { colors } from 'vuetify/lib';
+import theme from './client/utils/theme';
+import themeApp from './client/utils/theme';
 
 const isDev = !(process.env.NODE_ENV === 'production');
 
-const config: Configuration = {
+
+const config: Partial<Configuration> = {
   telemetry: false,
   srcDir: 'client/',
   server: {
@@ -55,7 +57,10 @@ const config: Configuration = {
     'nuxt-typed-vuex',
     '@nuxtjs/vuetify',
   ],
-
+  // @ts-ignore
+  vuetify: {
+    ...themeApp,
+  },
   /*
   ** Nuxt.js modules
   */
@@ -72,6 +77,11 @@ const config: Configuration = {
     transpile: [
       /typed-vuex/,
     ],
+  },
+  babel: {
+    babelrc: false,
+    cacheDirectory: undefined,
+    presets: ['@nuxt/babel-preset-app'],
   },
 };
 
