@@ -30,7 +30,7 @@
 		                    sub-group
 		                    class="ma-0 pa-0"
                     >
-                        <template v-slot:activator style="background-color: #0d47a1">
+                        <template v-slot:activator>
 
                             <v-list-item-title class="ml-0 pl-0" style="position: relative;float: left;left: -15px;">
                                 {{ childone.name }}

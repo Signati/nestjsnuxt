@@ -1,5 +1,5 @@
 <template>
-	<v-list-item active-class="secondary white--text" :to="routepath.url" :class=" second ? 'ml-3':''">
+	<v-list-item active-class="accent" :to="routepath.url" :class=" second ? 'ml-3':''">
 		<v-list-item-icon class="m-0 mr-2">
 			<v-icon>{{routepath.icon}}</v-icon>
 		</v-list-item-icon>

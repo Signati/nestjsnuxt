@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { NuxtModule } from '../config/nuxt/nuxt.module';
-import { AuthController } from './auth.controller';
+import { AutenticacionModule } from './autenticacion/autenticacion.module';
 
 @Module({
-  controllers: [AuthController],
   imports: [
     NuxtModule,
+    AutenticacionModule,
   ],
 })
 export class SystemModule {

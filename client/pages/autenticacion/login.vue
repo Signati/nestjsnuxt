@@ -1,12 +1,42 @@
 <template>
 	<v-container fluid class="pa-0">
-		<v-row row no-gutters align="center" justify="center">
+		<v-row row no-gutters>
 			<v-col cols="12" :style="style">
 				<v-row no-gutters>
 					<v-col cols="12" sm="6" md="7" lg="8" class="hidden-xs-only">
-						<v-card>
+						<v-row align="center"
+						       justify="center"
+						       style="height: 100vh; "
+						>
+							<v-carousel
+									cycle
+									height="400"
+									hide-delimiter-background
+									hide-delimiters
+									show-arrows-on-hover
+									:show-arrows="false"
+							>
+								<v-carousel-item
+										v-for="(slide, i) in slides"
+										:key="i"
+								>
+									<v-sheet
+											:color="colors[i]"
+											height="100%"
+									>
+										<v-row
+												class="fill-height"
+												align="center"
+												justify="center"
+										>
+											<div class="display-3">{{ slide }} Slide</div>
+										</v-row>
+									</v-sheet>
+								</v-carousel-item>
+							</v-carousel>
 							<!--<lottie :options="defaultOptions" style="float:left" :height="200" :width="300"/>-->
-						</v-card>
+						</v-row>
+					
 					</v-col>
 					<v-col cols="12" sm="6" md="5" lg="4">
 						<v-card class="elevation-1 pa-3 ma-3 cardlogin"
@@ -113,6 +143,21 @@ const Login = defineComponent({
       backgroundSize: 'cover',
     };
 
+    const colors = [
+      'indigo',
+      'warning',
+      'pink darken-2',
+      'red lighten-1',
+      'deep-purple accent-4',
+    ];
+    const slides = [
+      'First',
+      'Second',
+      'Third',
+      'Fourth',
+      'Fifth',
+    ];
+
     const authuser = reactive({
       email: '',
       password: '',
@@ -135,6 +180,8 @@ const Login = defineComponent({
       style,
       login,
       loading,
+      colors,
+      slides,
       emailRules,
       passwordRules,
       authuser,

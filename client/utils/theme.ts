@@ -5,9 +5,9 @@ const themeApp: GlobalVuetifyPreset = {
     // @ts-ignore
     themes: {
       light: {
-        primary: '#2196f3',
-        secondary: '#e91e63',
-        accent: '#5e04af',
+        primary: '#8e23ec',
+        secondary: '#093CB2',
+        accent: '#F6F9FC',
         error: '#f44336',
         warning: '#c32017',
         info: '#2196f3',

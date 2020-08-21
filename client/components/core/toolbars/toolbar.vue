@@ -3,6 +3,8 @@
 	           :clipped-left="clipped"
 	           height="54"
 	           color="primary"
+	           elevation="0"
+	           style="border-bottom: 1px solid;border-bottom-color: hsla(0, 0%, 100%, .08)!important;"
 	           dark>
 		
 		<v-app-bar-nav-icon @click.stop="drawerTouch">

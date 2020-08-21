@@ -2,7 +2,7 @@
 	<v-app>
 		<v-main>
 			<Navigation/>
-			<v-container>
+			<v-container style="background: #F2F4FA">
 				<nuxt/>
 			</v-container>
 		</v-main>
